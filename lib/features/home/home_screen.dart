@@ -14,7 +14,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Container(
           child: Center(
-        child: Text('Home Screen'),
+        child: Text(
+          'Home Screen',
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        ),
       )),
     );
   }
