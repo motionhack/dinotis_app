@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:motionhack_9/features/home/home_screen.dart';
+import 'package:motionhack_9/features/login/daftar_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
             child: Container(
                 child: Image(image: AssetImage("assets/images/logo.png"))),
           ),
-          nextScreen: HomeScreen()),
+          nextScreen: DaftarScreen()),
     );
   }
 }
