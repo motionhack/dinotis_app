@@ -75,7 +75,10 @@ class _jadwalCardState extends State<jadwalCard> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text(creator['name']),
+                            Text(                                                   
+                              creator['name'],
+                              style: TextStyle(fontSize: 19, fontWeight: FontWeight.w400)
+                              ),                            
                             Padding(
                               padding:
                                   const EdgeInsets.only(top: 2.0, bottom: 2.0),
@@ -89,10 +92,25 @@ class _jadwalCardState extends State<jadwalCard> {
                                 maxLines: 1,
                               ),
                             ),
-                            Text(
-                              'kocak',
-                              style: TextStyle(
-                                  fontSize: 12.0, color: Colors.black54),
+                            Row(
+                              children: [
+                                Icon(Icons.calendar_month),
+                                Text(
+                                  '23 Februari 2023',
+                                  style: TextStyle(
+                                      fontSize: 12.0, color: Colors.black54),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.timer),
+                                Text(
+                                  '14:00',
+                                  style: TextStyle(
+                                      fontSize: 12.0, color: Colors.black54),
+                                ),
+                              ],
                             )
                           ],
                         ),
