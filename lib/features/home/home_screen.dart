@@ -18,8 +18,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
+      
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,6 +39,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text(
                     'For You',
                     style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                       color: _currentIndex == 0 ? Colors.black : Colors.grey,
                     ),
                   ),
@@ -62,6 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text(
                     'Timeline',
                     style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
                       color: _currentIndex == 1 ? Colors.black : Colors.grey,
                     ),
                   ),

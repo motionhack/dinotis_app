@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:motionhack_9/features/profile/profile_screen.dart';
 
 class creatorOfTheWeek extends StatelessWidget {
   const creatorOfTheWeek({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: Row(children: [
-            const Text(
-              'Creator Of The Week',
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w600,
-                fontSize: 25,
-              ),
+        Row(children: [
+          const Text(
+            'Creator Of The Week',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w600,
+              fontSize: 25,
             ),
-          ]),
-        ),
+          ),
+        ]),
         const SizedBox(
           height: 10,
         ),
@@ -94,7 +93,11 @@ class creatorOfTheWeek extends StatelessWidget {
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              // Add your button press logic here
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => profileFeature()),
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.blue,

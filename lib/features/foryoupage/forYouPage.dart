@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:motionhack_9/features/foryoupage/components/bannerCarousel.dart';
 import 'package:motionhack_9/features/foryoupage/components/creatorOfTheWeek.dart';
 import 'package:motionhack_9/features/foryoupage/components/jadwalCard.dart';
 import 'package:motionhack_9/features/foryoupage/components/yangSeru.dart';
@@ -14,7 +15,7 @@ class _forYouPageState extends State<forYouPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: SingleChildScrollView(
         child: Column(
           children: [
@@ -37,7 +38,7 @@ class _forYouPageState extends State<forYouPage> {
                     Text('Lihat Semua',
                         style: TextStyle(
                             fontSize: 13,
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w500,
                             color: Colors.blue))
                   ],
                 ),
@@ -63,7 +64,7 @@ class _forYouPageState extends State<forYouPage> {
                     Text('Lihat Semua',
                         style: TextStyle(
                             fontSize: 13,
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w500,
                             color: Colors.blue))
                   ],
                 ),
@@ -71,6 +72,8 @@ class _forYouPageState extends State<forYouPage> {
                   height: 10,
                 ),
                 const YangSeru(),
+                const bannerCarousel(),
+
               ],
             )),
             

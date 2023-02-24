@@ -44,7 +44,7 @@ class _jadwalCardState extends State<jadwalCard> {
               final creator = creators[index];
               final profession = creator['professions'][0]['name'];
               final image = creator['profilePhoto'];
-              return Container(
+              return Container( 
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.all(Radius.circular(10.0)),
@@ -69,7 +69,7 @@ class _jadwalCardState extends State<jadwalCard> {
                       ),
                     ),
                     SizedBox(
-                      width: 200,
+                      width: 180,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -86,15 +86,21 @@ class _jadwalCardState extends State<jadwalCard> {
                                 profession,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  fontSize: 12.0,
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w500,
                                   color: Colors.black54,
                                 ),
                                 maxLines: 1,
                               ),
                             ),
+                            const SizedBox(height: 4,),
                             Row(
                               children: [
-                                Icon(Icons.calendar_month),
+                                Icon(
+                                  color: Colors.blue,
+                                  size: 20.0,
+                                  Icons.calendar_month),
+                                  const SizedBox(width: 2,),
                                 Text(
                                   '23 Februari 2023',
                                   style: TextStyle(
@@ -102,9 +108,14 @@ class _jadwalCardState extends State<jadwalCard> {
                                 ),
                               ],
                             ),
+                            const SizedBox(height: 4,),
                             Row(
                               children: [
-                                Icon(Icons.timer),
+                                Icon(
+                                  color: Colors.blue,
+                                  size: 20.0,
+                                  Icons.timer),
+                                  const SizedBox(width: 2,),
                                 Text(
                                   '14:00',
                                   style: TextStyle(
