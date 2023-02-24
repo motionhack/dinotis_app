@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:motionhack_9/features/foryoupage/components/jadwalCard.dart';
 import 'package:motionhack_9/features/home/home_screen.dart';
 
 void main() {
