@@ -1,23 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:motionhack_9/features/foryoupage/components/jadwalCard.dart';
 import 'package:motionhack_9/features/profile/components/overview.dart';
 import 'package:motionhack_9/features/profile/components/schedule.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class ApiProfile extends StatefulWidget {
-  const ApiProfile({super.key});
-
+  final List creators;
+  final int index;
+  const ApiProfile({
+    Key? key,
+    required this.creators,
+    required this.index,
+  }) : super(key: key);
   @override
   State<ApiProfile> createState() => _ApiProfileState();
 }
 
 class _ApiProfileState extends State<ApiProfile> {
+  late Map<String, dynamic> creator;
+  
+
+  void initState() {
+    super.initState();
+    creator = widget.creators[widget.index];
+   
+  }
+
   final List<Widget> _screens = [Schedule(), Overview()];
   int _currentIndex = 0;
   final List<String> images = [
     'https://res.cloudinary.com/dazw9kv2d/image/upload/v1677240552/Group_12875_ohpz9w.png',
     'https://res.cloudinary.com/dazw9kv2d/image/upload/v1677254514/jerome_r4koyf.png',
-    'https://picsum.photos/300/200?image=2',
+    'https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/825.jpg',
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +59,7 @@ class _ApiProfileState extends State<ApiProfile> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
                       image: DecorationImage(
-                        image: NetworkImage(image),
+                        image: NetworkImage(creator['profilePhoto'].toString()),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -63,12 +79,12 @@ class _ApiProfileState extends State<ApiProfile> {
                 height: 20,
               ),
               Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                const Text(
-                  'Jerome Polin',
+                Text(
+                  creator['name'].toString(),
                   style: TextStyle(fontSize: 35, fontWeight: FontWeight.w600),
                 ),
-                const Text(
-                  'Content Creator',
+                Text(
+                  creator['professions'][0]['name'].toString(),
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
@@ -154,9 +170,9 @@ class _ApiProfileState extends State<ApiProfile> {
                   ],
                 ),
               ]),
-              Expanded(
-                child: _screens[_currentIndex],
-              )
+              Wrap(children: [
+                _screens[_currentIndex],
+              ])
             ])));
   }
 }
