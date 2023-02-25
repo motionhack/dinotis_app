@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:motionhack_9/features/foryoupage/components/jadwalCard.dart';
 import 'package:motionhack_9/features/home/home_screen.dart';
+import 'package:motionhack_9/features/profile/profile_screen.dart';
+import 'package:motionhack_9/features/searchpage/searchPage.dart';
+import 'package:motionhack_9/features/timelinepage/timelinePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +16,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Obrol',
       theme: ThemeData(
         
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/forum': (context) => const searchPage(),
+        '/jadwal': (context) => const profileFeature(),
+        '/myprofile': (context) => const HomeScreen(),
+      },
     );
   }
 }

@@ -15,12 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   final List<Widget> _screens = [forYouPage(), timelinePage()];
 
-
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
-      
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -96,6 +93,55 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: _screens[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Color(0xff221C7A),
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.chat,
+              color: Color(0xff221C7A),
+            ),
+            label: 'forum',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.task,
+              color: Color(0xff221C7A),
+            ),
+            label: 'Jadwal',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.search,
+              color: Color(0xff221C7A),
+            ),
+            label: 'MyProfile',
+          ),
+        ],
+        showSelectedLabels: false, // hide labels for the selected tab
+        onTap: (index) {
+          switch (index) {
+            case 0:
+              Navigator.pushNamed(context, '/');
+              break;
+            case 1:
+              Navigator.pushNamed(context, '/forum');
+              break;
+            case 2:
+              Navigator.pushNamed(context, '/jadwal');
+              break;
+            case 3:
+              Navigator.pushNamed(context, '/myprofile');
+              break;
+          }
+        },
+      ),
     );
   }
 }
