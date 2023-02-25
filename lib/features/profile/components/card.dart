@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 
 
@@ -81,7 +82,23 @@ class _ScheduleCardState extends State<ScheduleCard> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                 ),
-                onPressed: (){}, child: Container(
+                onPressed: (){
+                  AwesomeDialog(
+                      context: context,
+                      animType: AnimType.leftSlide,
+                      headerAnimationLoop: false,
+                      dialogType: DialogType.success,
+                      showCloseIcon: false,
+                      title: 'Booked',
+                      btnOkOnPress: () {
+                        debugPrint('OnClick');
+                      },
+                      btnOkIcon: Icons.check_circle,
+                      onDismissCallback: (type) {
+                        debugPrint('Dialog Dissmiss from callback $type');
+                      },
+                    ).show();
+                }, child: Container(
                 child: Text('Book'),
               )),
             ],
