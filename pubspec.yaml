@@ -53,6 +53,8 @@ flutter:
     - assets/image 10.png
     - assets/emoji.png
     - assets/jerometimeline.jpg
+    - assets/kiranaputri.png
+    - assets/urrofi.png
     
   # To add assets to your application, add an assets section, like this:
   # assets:
