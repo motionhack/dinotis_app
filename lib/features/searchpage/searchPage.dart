@@ -25,18 +25,21 @@ class _searchPageState extends State<searchPage> {
             Container(
               margin: EdgeInsets.only(top: 20),
               padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Cari Kreatormu di sini",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
+              child: Material(
+                elevation: 3,
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: "Cari Kreatormu di sini",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide.none,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    prefixIcon: Icon(Icons.search),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                   ),
-                  filled: true,
-                  fillColor: Colors.grey[100],
-                  prefixIcon: Icon(Icons.search),
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                 ),
               ),
             ),
@@ -56,7 +59,7 @@ class _searchPageState extends State<searchPage> {
                     colors: [
                       Color(0xffC9DFFC),
                       Color.fromARGB(146, 149, 100, 187),
-                      Color(0xffEB7D18),
+                      Color.fromARGB(96, 235, 126, 24),
                       Color(0xffD5E5FB),
                     ],
                     stops: [0.20, 0.60, 0.80, 1.0],
@@ -79,7 +82,21 @@ class _searchPageState extends State<searchPage> {
                   ),
                 ),
               ),
-            )
+            ),
+            const SizedBox(height: 20,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text('Search results', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                      ],
+                    ),
+                  ],
+                ),
+              )
           ],
         ));
   }

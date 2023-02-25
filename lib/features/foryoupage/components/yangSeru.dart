@@ -49,7 +49,6 @@ class _YangSeruState extends State<YangSeru> {
               child: Material(
                 elevation: 5.0,
                 child: ClipRRect(
-                  
                   child: Container(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
