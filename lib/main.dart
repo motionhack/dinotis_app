@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:motionhack_9/features/foryoupage/components/jadwalCard.dart';
+import 'package:motionhack_9/features/home/home_screen.dart';
+import 'package:motionhack_9/features/profile/profile_screen.dart';
+import 'package:motionhack_9/features/searchpage/searchPage.dart';
+import 'package:motionhack_9/features/timelinepage/timelinePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,16 +12,22 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Obrol',
       theme: ThemeData(
-       
-        primarySwatch: Colors.red,
+        
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/forum': (context) => const searchPage(),
+        '/jadwal': (context) => const profileFeature(),
+        '/myprofile': (context) => const HomeScreen(),
+      },
     );
   }
 }
