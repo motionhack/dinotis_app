@@ -28,6 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  awesome_dialog: ^3.0.2
+  camera: ^0.10.3+1
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.2
   flutter:
@@ -51,7 +53,10 @@ flutter:
   assets:
     - assets/image 10.png
     - assets/emoji.png
-
+    - assets/jerometimeline.jpg
+    - assets/kiranaputri.png
+    - assets/urrofi.png
+    - assets/reaction.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
@@ -79,4 +84,3 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
