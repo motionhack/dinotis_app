@@ -107,10 +107,14 @@ class creatorOfTheWeek extends StatelessWidget {
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Text(
-                                  "👋",
-                                  style: TextStyle(fontSize: 24),
+                                Container(
+                                  width: 20,
+                                  child: Image.asset(
+                                    'assets/emoji.png',
+                                    fit: BoxFit.cover,
+                                    ),
                                 ),
+                                const SizedBox(width: 10,),
                                 Text(
                                   "Get in touch ",
                                   style: TextStyle(fontSize: 18),

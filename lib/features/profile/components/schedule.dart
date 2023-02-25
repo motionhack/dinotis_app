@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:motionhack_9/features/foryoupage/components/creatorOfTheWeek.dart';
 import 'package:motionhack_9/features/profile/components/card.dart';
+import 'package:motionhack_9/features/profile/components/dropdown.dart';
 
 class Schedule extends StatefulWidget {
   const Schedule({super.key});
@@ -26,10 +27,12 @@ class _ScheduleState extends State<Schedule> {
         children: [
           Container(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Group Call',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                )
+                ),
+                Dropdown()
               ],
             ),
           ),
@@ -39,6 +42,7 @@ class _ScheduleState extends State<Schedule> {
           ScheduleCard(),
           ScheduleCard(),
           ScheduleCard(),
+
         ],
       )
     );
