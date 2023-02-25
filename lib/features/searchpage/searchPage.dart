@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:motionhack_9/features/foryoupage/components/yangSeru.dart';
 
 class searchPage extends StatefulWidget {
   const searchPage({super.key});
@@ -44,9 +45,40 @@ class _searchPageState extends State<searchPage> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text('data'),
-              ],
+              children: [],
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Container(
+                height: null,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xffC9DFFC),
+                      Color.fromARGB(146, 149, 100, 187),
+                      Color(0xffEB7D18),
+                      Color(0xffD5E5FB),
+                    ],
+                    stops: [0.20, 0.60, 0.80, 1.0],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text('Trending In Hiburan', style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500),),
+                        ],
+                      ),
+                      const SizedBox(height: 15,),
+                      const YangSeru()
+                    ],
+                  ),
+                ),
+              ),
             )
           ],
         ));

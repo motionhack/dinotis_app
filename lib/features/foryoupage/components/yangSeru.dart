@@ -48,38 +48,41 @@ class _YangSeruState extends State<YangSeru> {
               padding: const EdgeInsets.all(8.0),
               child: Material(
                 elevation: 5.0,
-                child: Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Image.network(
-                        image,
-                        fit: BoxFit.cover,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        child: Text(
-                          creator['name'],
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
+                child: ClipRRect(
+                  
+                  child: Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.network(
+                          image,
+                          fit: BoxFit.cover,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          child: Text(
+                            creator['name'],
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5),
-                        child: Text(
-                          profession,
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w300,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          child: Text(
+                            profession,
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w300,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
