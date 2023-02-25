@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:motionhack_9/core/resources/colors.dart' as lib;
-import 'package:motionhack_9/features/login/masuk_screen.dart';
 
-class DaftarScreen extends StatefulWidget {
-  const DaftarScreen({super.key});
+class MasukScreen extends StatefulWidget {
+  const MasukScreen({super.key});
 
   @override
-  State<DaftarScreen> createState() => _DaftarScreenState();
+  State<MasukScreen> createState() => _MasukScreenState();
 }
 
-class _DaftarScreenState extends State<DaftarScreen> {
-  TextEditingController _namaLengkap = TextEditingController();
+class _MasukScreenState extends State<MasukScreen> {
   TextEditingController _nomorHp = TextEditingController();
   TextEditingController _kataSandi = TextEditingController();
-  TextEditingController _ulangiKataSandi = TextEditingController();
-  Color _buttonColor = lib.Colors.disable;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +21,7 @@ class _DaftarScreenState extends State<DaftarScreen> {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(
-                'Daftar',
+                'Masuk',
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
@@ -35,11 +31,11 @@ class _DaftarScreenState extends State<DaftarScreen> {
                 height: 5,
               ),
               Text(
-                'Silahkan masukkan data diri kamu',
+                'Silahkan masuk dengan nomor Hp-mu',
                 style: TextStyle(fontSize: 15, color: lib.Colors.disableText),
               ),
               Text(
-                'dengan benar',
+                'yang sudah terdaftar',
                 style: TextStyle(fontSize: 15, color: lib.Colors.disableText),
               ),
             ]),
@@ -49,26 +45,6 @@ class _DaftarScreenState extends State<DaftarScreen> {
             margin: EdgeInsets.only(left: 20, right: 20),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(
-                'Nama Lengkap',
-                style: TextStyle(
-                    fontSize: 16,
-                    color: lib.Colors.text,
-                    fontWeight: FontWeight.w500),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              TextField(
-                controller: _namaLengkap,
-                decoration: InputDecoration(
-                    hintText: 'Nama Lengkap',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10))),
-              ),
-              SizedBox(
-                height: 20,
-              ),
               Text(
                 'Nomor HP',
                 style: TextStyle(
@@ -109,36 +85,16 @@ class _DaftarScreenState extends State<DaftarScreen> {
                 controller: _kataSandi,
               ),
               SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Ulangi Kata Snadi',
-                style: TextStyle(
-                    fontSize: 16,
-                    color: lib.Colors.text,
-                    fontWeight: FontWeight.w500),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.visibility_off),
-                    hintText: 'Ulangi Kata Sandi',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10))),
-                controller: _ulangiKataSandi,
-              ),
-              SizedBox(
-                height: 50,
+                height: 60,
               ),
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    GestureDetector();
+                  },
                   child: Text(
-                    'Daftar',
+                    'Masuk',
                     style: TextStyle(fontSize: 18),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -150,20 +106,47 @@ class _DaftarScreenState extends State<DaftarScreen> {
                   ),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Sudah punya akun?'),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => MasukScreen()));
-                      },
-                      child: Text('Masuk Sekarang'))
-                ],
-              )
+              SizedBox(
+                height: 30,
+              ),
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+                Text(
+                  'atau',
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: lib.Colors.disable),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image(image: AssetImage('assets/icons/google.png')),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Sign In With Google',
+                          style: TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    )),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Belum punya akun?'),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Daftar Sekarang!'))
+                  ],
+                ),
+              ]),
             ]),
           )
         ]),
