@@ -19,6 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.white,
         title: Row(
@@ -94,6 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
             icon: Icon(
@@ -104,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.chat,
+              Icons.message,
               color: Color(0xff221C7A),
             ),
             label: 'forum',
@@ -118,13 +120,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.search,
+              Icons.person,
               color: Color(0xff221C7A),
             ),
             label: 'MyProfile',
           ),
         ],
-        showSelectedLabels: false, // hide labels for the selected tab
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        iconSize: 25.0,
         onTap: (index) {
           switch (index) {
             case 0:
