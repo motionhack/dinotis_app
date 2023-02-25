@@ -92,26 +92,51 @@ class _timelinePostState extends State<timelinePost> {
                 Positioned.fill(
                   child: Center(
                     child: Text(
-                      
                       'Upgrade ke Premium untuk melihat dan beri reaksi!',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
                         fontWeight: FontWeight.bold,
-                        
                       ),
-                      
                     ),
                   ),
                 ),
+                Positioned(
+                    bottom: 15,
+                    right: 20,
+                    child: InkWell(
+                      onTap: () {
+                        
+                      },
+                      child: Image.asset(
+                        'assets/reaction.png',
+                        width: 40,
+                        fit: BoxFit.cover,
+                      ),
+                    )),
               ])
-            : Image.asset(
-                widget.image,
-                width: double.infinity,
-                height: 300,
-                fit: BoxFit.cover,
-              ),
+            : Stack(children: [
+                Image.asset(
+                  widget.image,
+                  width: double.infinity,
+                  height: 300,
+                  fit: BoxFit.cover,
+                ),
+                Positioned(
+                    bottom: 15,
+                    right: 20,
+                    child: InkWell(
+                      onTap: () {
+
+                      },
+                      child: Image.asset(
+                        'assets/reaction.png',
+                        width: 40,
+                        fit: BoxFit.cover,
+                      ),
+                    )),
+              ]),
       ),
     ]);
   }
