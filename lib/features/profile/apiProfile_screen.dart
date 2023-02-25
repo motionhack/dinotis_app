@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:motionhack_9/features/profile/components/overview.dart';
 import 'package:motionhack_9/features/profile/components/schedule.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
-class profileFeature extends StatefulWidget {
-  const profileFeature({super.key});
+class ApiProfile extends StatefulWidget {
+  const ApiProfile({super.key});
 
   @override
-  State<profileFeature> createState() => _profileFeatureState();
+  State<ApiProfile> createState() => _ApiProfileState();
 }
 
-class _profileFeatureState extends State<profileFeature> {
+class _ApiProfileState extends State<ApiProfile> {
+  final List<Widget> _screens = [Schedule(), Overview()];
+  int _currentIndex = 0;
   final List<String> images = [
     'https://res.cloudinary.com/dazw9kv2d/image/upload/v1677240552/Group_12875_ohpz9w.png',
     'https://res.cloudinary.com/dazw9kv2d/image/upload/v1677254514/jerome_r4koyf.png',
     'https://picsum.photos/300/200?image=2',
   ];
-  final List<Widget> _screens = [Schedule(), Overview()];
-  int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,10 +154,9 @@ class _profileFeatureState extends State<profileFeature> {
                   ],
                 ),
               ]),
-              Wrap(
-                children: [
-                _screens[_currentIndex],
-              ])
+              Expanded(
+                child: _screens[_currentIndex],
+              )
             ])));
   }
 }

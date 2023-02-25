@@ -8,6 +8,7 @@ class Dropdown extends StatefulWidget {
 }
 
 class _DropdownState extends State<Dropdown> {
+  String dropdownValue = 'All';
   String? _selectedItem;
   final List<String> _dropdownItems = [
     'Item 1',

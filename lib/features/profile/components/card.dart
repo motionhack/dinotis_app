@@ -48,7 +48,7 @@ class _ScheduleCardState extends State<ScheduleCard> {
             children: [
               Icon(
                 Icons.calendar_month,
-                color: Colors.amber[500],
+                color: Colors.amber[400],
                 ),
               const SizedBox(width: 5,),
               Text('Saturday, 25 February 2023')
@@ -58,7 +58,7 @@ class _ScheduleCardState extends State<ScheduleCard> {
             children: [
               Icon(
                 Icons.timelapse_outlined,
-                color: Colors.amber[500],
+                color: Colors.amber[400],
                 ),
               const SizedBox(width: 5,),
               Text('22.00 - 22.45 WIB')
@@ -68,7 +68,7 @@ class _ScheduleCardState extends State<ScheduleCard> {
             children: [
               Icon(
                 Icons.people,
-                color: Colors.amber[500],
+                color: Colors.amber[400],
                 ),
               const SizedBox(width: 5,),
               Text('25/50 Participant')
